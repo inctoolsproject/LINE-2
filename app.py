@@ -32,6 +32,7 @@ settings = json.load(codecs.open("bot/temp.json","r","utf-8"))
 msg_dict = {}
 msg_dictt = {}
 restart = False
+app.run(use_reloader=False)
 def init(app):
     z = open("scheduler.lock", "wb")
     try:
