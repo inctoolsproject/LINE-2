@@ -8,6 +8,10 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse, timeit, _thread
 #==============================================================================#
 app = Flask(__name__)
+
+if __name__ == "__main__":
+    app.run()
+	
 f = open('bot/run.txt','r')
 ttoken = f.read()
 f.close()

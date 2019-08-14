@@ -1,1 +1,1 @@
-web gunicorn --timeout 0 app:app
+web gunicorn --timeout 10000000000 app:app
