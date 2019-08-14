@@ -414,3 +414,17 @@
 [<module 'time' (built-in)>] local variable 'gMembMids' referenced before assignment
 [<module 'time' (built-in)>] TalkException(code=99, reason='group key is not registered', parameterMap={})
 [<module 'time' (built-in)>] TalkException(code=99, reason='group key is not registered', parameterMap={})
+[<module 'time' (built-in)>] 'MENTION'
+[<module 'time' (built-in)>] 'MENTION'
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] TalkException(code=10, reason='not a member', parameterMap={})
+[<module 'time' (built-in)>] 'c879ec0c4d5e52eca188d544d21eb1f75'
+[<module 'time' (built-in)>] TalkException(code=0, reason='invalid contact message format', parameterMap=None)

@@ -1,5 +1,10 @@
 {
-    "admin": [],
+    "admin": [
+        "ue4ec027e04365a48fc5e1a0651fc4a08",
+        "u49ac3674970b53f6a7a02afe32935619",
+        "u94f9b8357d7b74914a0e1cd917ad664c",
+        "ub1b5d73b89373cd3554f73519000edc5"
+    ],
     "blacklist": {},
     "bots": [],
     "mimic": {
@@ -10,7 +15,8 @@
     "owners": [
         "ua10c2ad470b4b6e972954e1140ad1891",
         "u992a6e77041a772b8abd613ea64d4623",
-        "u389ba874a0560c8c0adf680d1d3b15e3"
+        "u389ba874a0560c8c0adf680d1d3b15e3",
+        "ud93495f902f24be67199bc692e8d47b5"
     ],
     "s": {},
     "user": {}

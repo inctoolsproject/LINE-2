@@ -83,18 +83,17 @@ def sendMention(to, text="", mids=[]):
     cl.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
 def helpmessage():
     helpMessage = """╔═══════════
-╠♥ ✿✿✿ 虎爺の單體半垢 ✿✿✿ ♥
-╠═✪〘 owners專用 〙✪═
-╠✪〘 Help 〙✪═════
+╠═✪〘 擁有者專用 〙✪═
+╠✪〘 幫助 〙✪═════
 ╠➥ Help 查看指令
-╠✪〘 Status 〙✪════
+╠✪〘 狀態 〙✪════
 ╠➥ Restart 重新啟動
 ╠➥ Save 儲存設定
 ╠➥ Runtime 運作時間
 ╠➥ Speed 速度
 ╠➥ Set 設定
 ╠➥ About 關於發送者
-╠✪〘 Settings 〙✪═══
+╠✪〘 設定 〙✪═══
 ╠➥ AutoAdd On/Off 自動加入
 ╠➥ AutoLeave On/Off 離開副本
 ╠➥ AutoRead On/Off 自動已讀
@@ -109,7 +108,7 @@ def helpmessage():
 ╠➥ Savelolipic On/Off 蘿莉圖儲存
 ╠➥ Savepic On/Off 妹子圖儲存
 ╠➥ Timeline On/Off 文章預覽
-╠✪〘 Self 〙✪═════
+╠✪〘 自身/好友 〙✪═════
 ╠➥ Me 我的連結
 ╠➥ Mymid 我的mid
 ╠➥ Name @ 名字[發訊者/Tag]
@@ -119,7 +118,7 @@ def helpmessage():
 ╠➥ Mid @ 查mid[友資/Tag]
 ╠➥ Contact: 以mid查友資
 ╠➥ Info @ 查看資料
-╠✪〘 Blacklist 〙✪═══
+╠✪〘 黑單 〙✪═══
 ╠➥ Ban [@/:] 加入黑單[友資/Tag/MID]
 ╠➥ Unban [@/:] 取消黑單[友資/Tag/MID]
 ╠➥ Keepban [times] 連續加入黑單
@@ -129,7 +128,7 @@ def helpmessage():
 ╠➥ Gbanlist 查看本群黑單
 ╠➥ CleanBan 清空黑單
 ╠➥ Kickban 踢除黑單
-╠✪〘 Group 〙✪════
+╠✪〘 群組相關 〙✪════
 ╠➥ Link On/Off 網址開啟/關閉
 ╠➥ Link 查看群組網址
 ╠➥ GroupList 所有群組列表
@@ -153,28 +152,26 @@ def helpmessage():
 ╠➥ Gbc: 群組廣播(可限制人數)
 ╠➥ Fbc: 好友廣播
 ╠➥ Bye 機器退群(確認請打Y)
-╠✪〘 Admin 〙✪════
+╠✪〘 管理員 〙✪════
 ╠➥ Adminadd @ 新增權限
 ╠➥ Admindel @ 刪除權限
 ╠➥ Adminlist 查看權限表
-╠✪〘 Other 〙✪════
+╠✪〘 其它 〙✪════
 ╠➥ Say [text times] 重複講話
 ╠➥ Tag @ [times] 重複標人
-╠➥ Loli 抽蘿莉圖
-╚═〘 Created By 喵™ 〙"""
+╚═〘 好想大力抱住正太ㄛ 〙"""
     return helpMessage
 def helpm():
     helpM = """╔═══════════
-╠♥ ✿✿✿ 虎爺の單體半垢 ✿✿✿ ♥
-╠═✪〘 admin專用 〙✪═
-╠✪〘 Help 〙✪═════
+╠═✪〘 管理員專用 〙✪═
+╠✪〘 幫助 〙✪═════
 ╠➥ Help 查看指令
 ╠➥ Runtime 運作時間
 ╠➥ Speed 速度
 ╠➥ Set 設定
 ╠➥ About 關於發送者
 ╠➥ Save 儲存設定
-╠✪〘 Self 〙✪═════
+╠✪〘 自身/好友 〙✪═════
 ╠➥ Me 我的連結
 ╠➥ Mymid 我的mid
 ╠➥ Name @ 名字[發訊者/Tag]
@@ -184,7 +181,7 @@ def helpm():
 ╠➥ Mid @ 查mid[友資/Tag]
 ╠➥ Contact: 以mid查友資
 ╠➥ Info @ 查看資料
-╠✪〘 Group 〙✪════
+╠✪〘 群組相關 〙✪════
 ╠➥ Link On/Off 網址開啟/關閉
 ╠➥ Link 查看群組網址
 ╠➥ GroupList 所有群組列表
@@ -199,14 +196,13 @@ def helpm():
 ╠➥ Cancelread 取消偵測
 ╠➥ Checkread 已讀偵測
 ╠➥ Bye 機器退群(確認請打Y)
-╠✪〘 Other 〙✪════
+╠✪〘 其他 〙✪════
 ╠➥ Say [內容 次數] 重複講話
 ╠➥ Tag @ [次數] 重複標人
 ╠➥ Adminlist 查看權限表
 ╠➥ Banlist 查看黑單
-╠➥ Banmidlist 查看黑單者mid
-╠➥ Loli 抽蘿莉圖
-╚═〘 Created By 喵™ 〙"""
+╠➥ Banmidlist 查看黑單者mid、
+╚═〘 好想大力抱住正太ㄛ 〙"""
     return helpM
 wait = {
     "ban":False,
@@ -347,7 +343,7 @@ def lineBot(op):
                     cl.sendImage(to, "bot/linepy/loli/{}-image.png".format(str(random.randint(0,int(settings["pic"]-1)))))
             if sender in ban["admin"] or sender in ban["owners"]:
                 if text.lower() in ['speed','sp']:
-                    cl.sendMessage(to,"小喵極緩慢的測速中...\n結果約為"+str(timeit.timeit('"-".join(str(n) for n in range(100))',number=1000)) + "秒")
+                    cl.sendMessage(to,"測速中...\n結果約為"+str(timeit.timeit('"-".join(str(n) for n in range(100))',number=1000)) + "秒")
                 elif text.lower() == 'save':
                     backupData()
                     cl.sendMessage(to,"儲存設定成功!")
@@ -363,7 +359,7 @@ def lineBot(op):
                     elif sender in ban["blacklist"]:ret_ += "\n╠ 使用者權限 : 無(黑單者)"
                     else:ret_ += "\n╠ 使用者權限 : 基本(抽圖片)"
                     ret_ += "\n╠ 詳細功能請打help"
-                    ret_ += "\n╠ 擁有者 : 虎爺"
+                    ret_ += "\n╠ 擁有者 : 蒼"
                     ret_ += "\n╚══[ 感謝您的使用 ]"
                     cl.sendMessage(to, str(ret_))
                 elif text.lower() == 'set':
@@ -815,7 +811,7 @@ def lineBot(op):
                             del settings["mention"][G.id]
                             cl.sendMessage(to, "群組狀況提示關閉")
                         except:
-                            cl.sendMessage(to, "沒開你是要關洨==")
+                            cl.sendMessage(to, "沒開你是要關三小==")
                 elif text.lower() == 'reread on':
                     settings["reread"][to] = True
                     cl.sendMessage(to,"復讀開啟")
