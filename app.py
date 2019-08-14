@@ -323,7 +323,6 @@ def lineBot(op):
             if settings["autoLeave"] == True:
                 cl.leaveRoom(op.param1)
         if (op.type == 25 or op.type == 26) and op.message.contentType == 0:
-            print ("[ 25 or 26 ] Others")
             msg = op.message
             text = msg.text
             msg_id = msg.id
