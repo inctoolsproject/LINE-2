@@ -6,6 +6,9 @@ from datetime import datetime
 from time import sleep
 from humanfriendly import format_timespan, format_size, format_number, format_length
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse, timeit, _thread
+import atexit
+import fcntl
+from flask_apscheduler import APScheduler
 #==============================================================================#
 app = Flask(__name__)
 
@@ -29,6 +32,20 @@ settings = json.load(codecs.open("bot/temp.json","r","utf-8"))
 msg_dict = {}
 msg_dictt = {}
 restart = False
+def init(app):
+    z = open("scheduler.lock", "wb")
+    try:
+        fcntl.flock(z, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        scheduler = APScheduler()
+        scheduler.init_app(app)
+        scheduler.start()
+    except:
+        pass
+    def unlock():
+        fcntl.flock(z, fcntl.LOCK_UN)
+        z.close()
+    atexit.register(unlock)
+
 def restartBot():
     print ("[ INFO ] BOT RESETTED")
     backupData()
