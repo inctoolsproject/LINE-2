@@ -236,12 +236,15 @@ if clMID not in ban["owners"]:
 def lineBot(op):
     try:
         if op.type == 0:
+            print ("[ 0 ] END OF OPERATION")
             return
         if op.type == 5:
+            print ("[ 5 ] NOTIFIED ADD CONTACT")
             if settings["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
                 sendMention(op.param1, " @! 感謝您加我為好友",[op.param1])
         if op.type == 11:
+            print ("[ 11 ] Change Group settings")
             G = cl.getGroup(op.param1)
             if op.param1 in settings["mention"]:
                 sendMention(op.param1, " @! 更改群組設定",[op.param2])
@@ -255,6 +258,7 @@ def lineBot(op):
                     gs.preventJoinByTicket = True
                     cl.updateGroup(gs)
         if op.type == 13:
+            print ("[ 13 ] invite Group")
             if clMID in op.param3:
                 group = cl.getGroup(op.param1)
                 if op.param2 in ban["admin"] or op.param2 in ban["owners"]:
@@ -290,6 +294,7 @@ def lineBot(op):
                         cl.cancelGroupInvitation(op.param1, [mid])
                     cl.sendMessage(op.param1,"Do not invite blacklist user...")
         if op.type == 17:
+            print ("[ 17 ] Welcome Info")
             if op.param1 in ban["blacklist"]:
                 cl.kickoutFromGroup(op.param1,[op.param1])
                 cl.sendMessage(op.param1,"Blacklist user joined...")
@@ -297,6 +302,7 @@ def lineBot(op):
                 name = str(cl.getGroup(op.param1).name)
                 sendMention(op.param1, "你好 @! 歡迎加入"+name,[op.param2])
         if op.type == 19:
+            print ("[ 19 ] Leave Info")
             if op.param1 in settings["mention"]:
                 chiya=[op.param2]
                 chiya.append(op.param3)
@@ -313,9 +319,11 @@ def lineBot(op):
                 cl.kickoutFromGroup(op.param1,[op.param2])
                 json.dump(ban, codecs.open('bot/ban.json','w','utf-8'), sort_keys=True, indent=4, ensure_ascii=False)
         if op.type == 24 or op.type == 21 or op.type ==22:
+            print ("[ 21 or 22 or 24 ] autoLeave")
             if settings["autoLeave"] == True:
                 cl.leaveRoom(op.param1)
         if (op.type == 25 or op.type == 26) and op.message.contentType == 0:
+            print ("[ 25 or 26 ] Others")
             msg = op.message
             text = msg.text
             msg_id = msg.id
