@@ -1,6 +1,5 @@
 # -*-coding: utf-8 -*-
 from linepy import *
-from flask import Flask, request, abort
 #from numba import jit
 from datetime import datetime
 from time import sleep
@@ -8,7 +7,6 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse, timeit, _thread
 import atexit
 import fcntl
-from flask_apscheduler import APScheduler
 #==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
