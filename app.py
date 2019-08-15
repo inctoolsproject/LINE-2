@@ -14,6 +14,8 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return 'home OK'
+if __name__ == "__main__":
+    app.run("0.0.0.0", 5000, debug=True)
 # ==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
@@ -1460,7 +1462,5 @@ while 1:
     except Exception as e:
         logError(e)
 # ==============================================================================#
-if __name__ == "__main__":
-    app.run()
 
 
