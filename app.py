@@ -1,6 +1,6 @@
 # -*-coding: utf-8 -*-
 from linepy import *
-from flask import *
+from flask import Flask, request, abort
 #from numba import jit
 from datetime import datetime
 from time import sleep
@@ -11,10 +11,12 @@ import fcntl
 from flask_apscheduler import APScheduler
 #==============================================================================#
 app = Flask(__name__)
-
+@app.route("/")
+def home():
+    return "Line bot"
 if __name__ == "__main__":
     app.run()
-	
+# ==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
 f.close()
