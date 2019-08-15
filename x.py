@@ -10,10 +10,6 @@ import atexit
 import fcntl
 from flask_apscheduler import APScheduler
 #==============================================================================#
-app = Flask(__name__)
-if __name__ == '__main__':
-    app.run()
-# ==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
 f.close()
