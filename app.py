@@ -11,11 +11,14 @@ import fcntl
 from flask_apscheduler import APScheduler
 #==============================================================================#
 app = Flask(__name__)
-@app.route("/")
-def home():
-    return 'home OK'
-if __name__ == "__main__":
-    app.run("0.0.0.0", 5000, debug=True)
+@app.route('/')
+def index():
+    return 'Index Page'
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World'
+
 # ==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
