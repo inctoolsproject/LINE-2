@@ -13,9 +13,7 @@ from flask_apscheduler import APScheduler
 app = Flask(__name__)
 @app.route("/")
 def home():
-    return "Line bot"
-if __name__ == "__main__":
-    app.run()
+    return 'home OK'
 # ==============================================================================#
 f = open('bot/run.txt','r')
 ttoken = f.read()
@@ -529,23 +527,23 @@ def lineBot(op):
                     if msg.toType == 2:
                         group = cl.getGroup(to)
                         if group.preventedJoinByTicket == False:
-                            cl.sendMessage(to, "既に許可されていますよ。")
+                            cl.sendMessage(to, "它已被允許。")
                         else:
                             if group.id in settings["qrprotect"]:
-                                cl.sendMessage(to,"招待URLの設定変更が禁止されているので作成できませんね。\n保護 URL オフを実行してください。")
+                                cl.sendMessage(to,"無法創建邀請URL，因為禁止更改設置。")
                             else:
                                 group.preventedJoinByTicket = False
                                 cl.updateGroup(group)
-                                cl.sendMessage(to, "URL招待を許可しましたよ。")
+                                cl.sendMessage(to, "允許訪問URL")
                 elif text.lower() in ["招待URL拒否",'link off']:
                     if msg.toType == 2:
                         group = cl.getGroup(to)
                         if group.preventedJoinByTicket == True:
-                            cl.sendMessage(to, "既に拒否されていますよ。")
+                            cl.sendMessage(to, "它已被拒絕")
                         else:
                             group.preventedJoinByTicket = True
                             cl.updateGroup(group)
-                            cl.sendMessage(to,  "URL招待を拒否しましたよ。")
+                            cl.sendMessage(to,  "我拒絕了網址邀請。")
                 elif text.lower() in ["魔刻結晶"]:
                     cl.sendMessage(to, "現在時刻は" + datetime.datetime.today().strftime('%Y年%m月%d日 %H:%M:%S') + "です。")
                 elif text.lower() == 'join':
@@ -562,7 +560,7 @@ def lineBot(op):
                     if msg.toType==2:
                         group=cl.getGroup(to)
                         if group.id in wait["qrprotect"]:
-                            cl.sendMessage(to, "招待URLの設定変更が禁止されているので作成できませんね。")
+                            cl.sendMessage(to, "無法創建邀請URL，因為禁止更改設置。")
                         else:
                             cl.sendMessage(to,"https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(group.id))))
                 elif text.lower() in ['groupinfo','ginfo']:
@@ -686,7 +684,7 @@ def lineBot(op):
                     else:
                         cl.sendMessage(msg.to,"It can't be used besides the group.")
                 elif text.lower() in ['setread','sr','既読ポイント設定']:
-                    cl.sendMessage(msg.to, "既読ポイントを設定しました。\n確認したい場合は「既読確認」と送信してください。")
+                    cl.sendMessage(msg.to, "讀取點已設置")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -769,16 +767,16 @@ def lineBot(op):
                 elif text.lower() == 'bomb':
                     cl.sendContact(to,"\'")
                 elif text.lower() in ["さようなら",'bye']:
-                    cl.sendMessage(msg.to, "考え直して頂けませんか...?\n(y/n)")
+                    cl.sendMessage(msg.to, "確定退出？\ N（y / n）")
                     wait['bye'][msg.to] = sender
                 elif text.lower() in ["Y","y","おk","N","n","だめ"]:
                     if msg._from== wait['bye'][msg.to]:
                         if text.lower() in ["いいよ",'y']:
-                            cl.sendMessage(msg.to, "分かりました...")
+                            cl.sendMessage(msg.to, "我明白了......")
                             cl.leaveGroup(msg.to)
                             del wait['bye'][msg.to]
                         elif text.lower() in ['n',"だめ"]:
-                            cl.sendMessage(msg.to, "考え直して頂けたようですね。ありがとうございます。")
+                            cl.sendMessage(msg.to, "看來你只是在玩我而已。")
                             del wait['bye'][msg.to]
                     else:
                         pass
@@ -1072,14 +1070,14 @@ def lineBot(op):
                         cl.cancelGroupInvitation(msg.to,[_mid])
                         sleep(2)
                     cl.sendMessage(msg.to,"已取消所有邀請!")
-                elif text.lower() in ["キャンセル"]:
+                elif text.lower() in ["取消"]:
                     group = cl.getGroup(to)
                     if group.invitee is None:
-                        cl.sendMessage(to, "招待中の人はいませんよ。")
+                        cl.sendMessage(to, "沒有人邀請你")
                     else:
                         gInviMids = [contact.mid for contact in group.invitee]
                         cl.cancelGroupInvitation(to, gInviMids)
-                        cl.sendMessage(to, str(len(group.invitee)) + "人の招待をキャンセルしましたよ。")
+                        cl.sendMessage(to, str(len(group.invitee)) + "你取消了這個人的邀請。")
                 elif text.lower().startswith("inv "):
                     if msg.toType == 2:
                         midd = text.split(' ')
@@ -1311,7 +1309,7 @@ def lineBot(op):
                         if clMID in mention["M"]:
                             if settings["detectMention"] == True:
                                 contact = cl.getContact(sender)
-                                sendMention(to,"@! 標毛?", [contact.mid])
+                                sendMention(to,"@! 標我幹嘛?", [contact.mid])
                             break
             try:
                 if to in settings["reread"]:
@@ -1461,4 +1459,8 @@ while 1:
                 oepoll.setRevision(op.revision)
     except Exception as e:
         logError(e)
+# ==============================================================================#
+if __name__ == "__main__":
+    app.run()
+
 
