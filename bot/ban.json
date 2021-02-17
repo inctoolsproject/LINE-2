@@ -1,22 +1,24 @@
 {
     "admin": [
-        "ue4ec027e04365a48fc5e1a0651fc4a08",
-        "u49ac3674970b53f6a7a02afe32935619",
-        "u94f9b8357d7b74914a0e1cd917ad664c",
-        "ub1b5d73b89373cd3554f73519000edc5"
+        "ud8539d5acfd9fd2a3f4b26dc9a04fca8",
+        "u9b287e2a5fc637016ad8529e35a13d4f"
     ],
     "blacklist": {},
-    "bots": [],
+    "bots": [
+        "ucbbd21e79a63b5486a47101ef73451b7",
+        "uccbf1a060985c3cad6afee0741edd155",
+        "ud8539d5acfd9fd2a3f4b26dc9a04fca8"
+    ],
     "mimic": {
         "copy": false,
         "status": false,
         "target": {}
     },
     "owners": [
-        "ua10c2ad470b4b6e972954e1140ad1891",
-        "u992a6e77041a772b8abd613ea64d4623",
-        "u389ba874a0560c8c0adf680d1d3b15e3",
-        "ud93495f902f24be67199bc692e8d47b5"
+        "ucbbd21e79a63b5486a47101ef73451b7",
+        "uccbf1a060985c3cad6afee0741edd155",
+        "uaa099926aec516bf8cfa8066cbb5052b",
+        "u5f03089287fb8d48e85b01c0afad2c80"
     ],
     "s": {},
     "user": {}

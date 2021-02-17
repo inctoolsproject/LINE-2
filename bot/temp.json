@@ -1,21 +1,33 @@
 {
-    "autoAdd": false,
+    "autoAdd": true,
     "autoJoinTicket": false,
-    "autoLeave": true,
+    "autoLeave": false,
     "autoRead": false,
     "autolike": true,
     "cancelprotect": false,
     "changeGroupPicture": {},
-    "detectMention": false,
-    "getmid": false,
-    "invprotect": {},
-    "mention": {},
+    "detectMention": true,
+    "getmid": true,
+    "invprotect": {
+        "c72dfa8e16a70ea2b3f0411c93be9709e": true
+    },
+    "mention": {
+        "c4bcc2db9b4905c928cda35ec96c817dd": true,
+        "c72dfa8e16a70ea2b3f0411c93be9709e": true,
+        "c7eb6d0ac0c8120e6cfc11454924a2684": true,
+        "c8b99cb93ed725c87ba8ccf2c3c60b140": true
+    },
     "monmonpic": 0,
     "pic": 9,
     "protect": {
-        "c4e5a2b83506c557c82f16001a417e7da": true
+        "c4bcc2db9b4905c928cda35ec96c817dd": true,
+        "c4e5a2b83506c557c82f16001a417e7da": true,
+        "c72dfa8e16a70ea2b3f0411c93be9709e": true
     },
-    "qrprotect": {},
+    "qrprotect": {
+        "c4bcc2db9b4905c928cda35ec96c817dd": true,
+        "c72dfa8e16a70ea2b3f0411c93be9709e": true
+    },
     "reread": {
         "c2f09a6ced1f33de5cffdcb2cb3997a77": true,
         "c4e5a2b83506c557c82f16001a417e7da": true,
